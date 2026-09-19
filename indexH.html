@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For the beautiful girl in the world Hala ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Jost:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rose:#E8899C;
+  --deep:#B75C77;
+  --plum:#4A2733;
+  --cream:#FFF7F9;
+  --paper:#FFFDFD;
+  --soft:#FFE6EE;
+  --line:rgba(183,92,119,.20);
+  --ink:var(--plum);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --rose:#F0A6B6;--deep:#F0A6B6;--plum:#FCE9EE;--cream:#2A1820;
+    --paper:#34212A;--soft:#3C2531;--line:rgba(240,166,182,.25);--ink:var(--plum);
+  }
+}
+:root[data-theme="dark"]{
+  --rose:#F0A6B6;--deep:#F0A6B6;--plum:#FCE9EE;--cream:#2A1820;
+  --paper:#34212A;--soft:#3C2531;--line:rgba(240,166,182,.25);--ink:var(--plum);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;min-height:100%}
+body{
+  font-family:"Jost",system-ui,sans-serif;font-weight:300;
+  color:var(--ink);overflow-x:hidden;
+  background:
+    radial-gradient(circle at 18% 12%, var(--soft), transparent 42%),
+    radial-gradient(circle at 84% 86%, var(--soft), transparent 40%),
+    var(--cream);
+}
+
+/* ---------- décor ---------- */
+#hearts,#confetti{position:fixed;inset:0;pointer-events:none;z-index:5;overflow:hidden}
+.heart{position:absolute;bottom:-40px;opacity:.7;animation:rise linear forwards}
+@keyframes rise{
+  0%{transform:translateY(0) rotate(0);opacity:0}
+  12%{opacity:.75}
+  100%{transform:translateY(-108vh) rotate(24deg);opacity:0}
+}
+.confetti-piece{position:absolute;top:-20px;width:9px;height:14px;border-radius:2px;animation:drop 3.6s linear forwards}
+@keyframes drop{
+  0%{transform:translateY(0) rotate(0)}
+  100%{transform:translateY(105vh) rotate(720deg);opacity:.2}
+}
+
+/* ---------- écran verrouillé ---------- */
+.lock{
+  position:fixed;inset:0;z-index:50;
+  background:linear-gradient(160deg,#2B1721,#40202E 60%,#2B1721);
+  color:#FCE9EE;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:28px;transition:opacity .9s ease, transform .9s ease;
+}
+.lock.opening{opacity:0;transform:scale(1.08);pointer-events:none}
+.lock-heart{font-size:44px;color:var(--rose);animation:beat 2.2s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.14)}}
+.lock small,.tiny{letter-spacing:.28em;font-size:.68rem;font-weight:400;opacity:.75}
+.lock h1{font-family:"Great Vibes",cursive;font-weight:400;font-size:clamp(50px,13vw,92px);margin:.15em 0;color:#FCE9EE}
+.lock .date{font-size:.95rem;opacity:.85;margin-bottom:26px}
+.countdown{display:flex;gap:clamp(10px,4vw,26px);justify-content:center;margin-bottom:24px}
+.countdown div{min-width:62px}
+.countdown span{display:block;font-size:clamp(26px,7vw,38px);font-family:"Cormorant Garamond",serif;color:var(--rose)}
+.countdown small{display:block;letter-spacing:.16em;font-size:.58rem;opacity:.7;margin-top:2px}
+.peek{margin-top:6px;background:none;border:0;color:#FCE9EE;opacity:.5;font-family:"Jost";font-size:.72rem;letter-spacing:.1em;text-decoration:underline;cursor:pointer}
+
+/* ---------- pages ---------- */
+main{min-height:100svh;position:relative;z-index:2}
+.page{
+  min-height:100svh;width:100%;display:none;
+  flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:74px 22px 104px;
+}
+.page.active{display:flex;animation:pageIn .75s ease both}
+@keyframes pageIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+.eyebrow{letter-spacing:.24em;font-size:.68rem;font-weight:500;color:var(--deep);margin-bottom:18px;opacity:.85}
+.script{font-family:"Great Vibes",cursive;font-weight:400;color:var(--deep);
+  font-size:clamp(52px,14vw,104px);line-height:1.08}
+h2{font-family:"Cormorant Garamond",serif;font-weight:300;font-style:italic;
+  font-size:clamp(26px,5.4vw,40px);color:var(--ink);margin-bottom:.4em;max-width:16ch}
+p.lead{font-family:"Cormorant Garamond",serif;font-size:clamp(18px,2.6vw,22px);
+  line-height:1.9;max-width:34ch;color:var(--ink);opacity:.92;margin-top:.6em}
+
+.btn{
+  margin-top:clamp(28px,5vh,44px);
+  font-family:"Jost";font-size:.88rem;font-weight:400;letter-spacing:.12em;
+  color:#fff;background:var(--rose);border:0;border-radius:999px;
+  padding:15px 34px;cursor:pointer;
+  box-shadow:0 14px 30px -18px var(--deep);
+  transition:transform .3s ease, box-shadow .3s ease, background .3s ease;
+}
+.btn:hover{transform:translateY(-3px);background:var(--deep);box-shadow:0 18px 34px -16px var(--deep)}
+.btn:focus-visible{outline:2px solid var(--deep);outline-offset:4px}
+
+/* lettre */
+.paper{
+  background:var(--paper);border:1px solid var(--line);
+  border-radius:4px 4px 70px 4px;
+  padding:clamp(26px,6vw,52px);
+  max-width:620px;text-align:left;
+  box-shadow:0 26px 60px -44px rgba(74,39,51,.6);
+}
+.paper p{font-family:"Cormorant Garamond",serif;font-size:clamp(17px,2.3vw,20px);
+  line-height:1.9;margin-bottom:1.2em}
+.paper p:last-child{margin-bottom:0}
+.paper .first{font-style:italic;color:var(--deep);font-size:clamp(19px,2.6vw,23px)}
+hr.rule{border:0;height:1px;width:52px;background:var(--rose);margin:1.6em 0}
+
+/* cartes */
+.cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  max-width:760px;width:100%;margin-top:8px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:20px;
+  padding:26px 22px;text-align:left}
+.card .ic{font-size:22px;display:block;margin-bottom:10px}
+.card h3{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:400;
+  font-size:1.1rem;color:var(--deep);margin-bottom:8px}
+.card p{font-size:.94rem;line-height:1.7;opacity:.9}
+
+/* drôle */
+.funny{max-width:560px;display:grid;gap:14px;margin-top:10px;text-align:left}
+.funny p{background:var(--paper);border:1px solid var(--line);border-radius:16px;
+  padding:16px 20px;font-size:.96rem;line-height:1.65}
+
+/* nuit */
+#night{background:linear-gradient(170deg,#2B1721,#43222F 55%,#2B1721);color:#FCE9EE}
+#night .eyebrow,#night .script{color:var(--rose)}
+#night h2,#night p.lead{color:#FCE9EE}
+.moon{font-size:46px;margin-bottom:16px;animation:float 5s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* cadeau */
+.gift{font-size:76px;background:none;border:0;cursor:pointer;animation:beat 2s ease-in-out infinite;line-height:1}
+.gift:focus-visible{outline:2px solid var(--deep);outline-offset:6px;border-radius:12px}
+.final{display:none;max-width:560px}
+.final.show{display:block;animation:pageIn .9s ease both}
+.signature{font-family:"Great Vibes",cursive;font-size:2rem;color:var(--deep);margin-top:22px}
+.bouquet{font-size:64px;margin-top:26px;animation:bouquetIn 1s ease .2s both, sway 3.5s ease-in-out 1.2s infinite}
+@keyframes bouquetIn{from{opacity:0;transform:translateY(14px) scale(.85) rotate(-8deg)}to{opacity:1;transform:none}}
+@keyframes sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+
+/* navigation */
+.progress{position:fixed;bottom:24px;left:0;right:0;z-index:20;
+  display:flex;gap:9px;justify-content:center}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--line);border:0;padding:0;cursor:pointer;
+  transition:transform .3s ease, background .3s ease}
+.dot.active{background:var(--rose);transform:scale(1.5)}
+.back{position:fixed;top:18px;left:18px;z-index:20;background:none;border:0;
+  color:var(--deep);font-family:"Jost";font-size:.8rem;letter-spacing:.08em;cursor:pointer;opacity:.6}
+.back:hover{opacity:1}
+.back[hidden]{display:none}
+
+/* mini compte à rebours 3-2-1 */
+.intro-count{
+  position:fixed;inset:0;z-index:60;
+  background:linear-gradient(160deg,#2B1721,#40202E 60%,#2B1721);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .4s ease;
+}
+.intro-count.show{opacity:1;pointer-events:auto}
+.intro-count .num{
+  font-family:"Cormorant Garamond",serif;font-weight:300;
+  font-size:clamp(90px,26vw,180px);color:var(--rose);
+  animation:pop .82s ease;
+}
+.intro-count .wish{
+  font-family:"Great Vibes",cursive;font-weight:400;color:#FCE9EE;
+  font-size:clamp(46px,11vw,96px);text-align:center;padding:0 20px;
+  animation:pop .9s ease;
+}
+@keyframes pop{
+  0%{transform:scale(.4);opacity:0}
+  55%{transform:scale(1.08);opacity:1}
+  100%{transform:scale(1);opacity:1}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .heart,.confetti-piece{display:none}
+  *{animation-duration:.01ms !important;animation-iteration-count:1 !important}
+}
+</style>
+</head>
+<body>
+
+<div id="hearts" aria-hidden="true"></div>
+<div id="confetti" aria-hidden="true"></div>
+
+<!-- ÉCRAN VERROUILLÉ -->
+<div id="lock" class="lock">
+  <div>
+    <div class="lock-heart" id="secretHeart">♡</div>
+    <small>A SURPRISE IS WAITING</small>
+    <h1>For the beautiful girl in the world Hala </h1>
+    <p class="date">It will open on its own on <strong>September 21</strong>, at midnight.</p>
+    <div class="countdown" aria-live="polite">
+      <div><span id="d">00</span><small>DAYS</small></div>
+      <div><span id="h">00</span><small>HOURS</small></div>
+      <div><span id="m">00</span><small>MINUTES</small></div>
+      <div><span id="s">00</span><small>SECONDS</small></div>
+    </div>
+  </div>
+</div>
+
+<button class="back" id="back" hidden>← back</button>
+
+<div class="intro-count" id="introCount" aria-live="polite"></div>
+
+<main>
+  <!-- 1 -->
+  <section class="page active">
+    <p class="eyebrow">I PREPARED SOMETHING</p>
+    <h1 class="script">Hala</h1>
+    <p class="lead">Not a message. Not a call. Something I made with my own hands, just for you.</p>
+    <button class="btn" id="startBtn">Start</button>
+  </section>
+
+  <!-- 2 -->
+  <section class="page">
+    <p class="eyebrow">SEPTEMBER 21ST</p>
+    <h2>Happy Birthday</h2>
+    <h1 class="script">Hala</h1>
+    <p class="lead">Today, the world celebrates the day you were born. But for me, it’s also a celebration of the day I got the chance to have someone like you in my life.❤️
+</p>
+    <button class="btn" data-next data-confetti>Continue</button>
+  </section>
+
+  <!-- 3 -->
+  <section class="page">
+    <p class="eyebrow">WHAT I WANTED TO TELL YOU</p>
+    <h2>My letter to you</h2>
+    <div class="paper">
+      <p class="first">There are people you meet. And then there's you.</p>
+      <p>I don't know exactly when it happened. The moment you went from "someone I like" to "someone without whom my days feel like nothing." But it happened, and now it's too late to go back.</p>
+      <p>You're the first person I think of when something good happens to me. And the only one I dare talk to when things go wrong. You know my silences as well as my nonsense, and you've never asked me to be anyone else. You have no idea what that's worth.</p>
+      <hr class="rule">
+      <p>You have this way of being there without making noise. You notice when my voice changes. You ask the right question at the right moment. And suddenly, everything feels lighter. I don't think I've ever told you enough.</p>
+      <p>So today I wish you a year that's gentle when you need gentleness, and vast when you want everything. Most of all, I wish for you to see yourself the way I see you.</p>
+      <p>Thank you for existing, Ela. Truly.</p>
+    </div>
+    <button class="btn" data-next>A little more</button>
+  </section>
+
+  <!-- 4 -->
+  <section class="page">
+    <p class="eyebrow">BECAUSE IT'S YOU</p>
+    <h2>Things I don't forget</h2>
+    <div class="cards">
+      <div class="card"><span class="ic">🌷</span><h3>Your laugh</h3>
+        <p>The one that just bursts out, too loud, at the worst possible moment. I could pick it out of a crowd.</p></div>
+      <div class="card"><span class="ic">🫶</span><h3>The way you listen</h3>
+        <p>You never cut in. You wait. And when you answer, it's always exactly what I needed to hear.</p></div>
+      <div class="card"><span class="ic">🌟</span><h3>Your courage</h3>
+        <p>You go through things no one sees, and you still manage to be gentle with everyone else. That's rare.</p></div>
+      <div class="card"><span class="ic">💗</span><h3>Us</h3>
+        <p>The conversations that end too late, the comfortable silences. With you, even nothing feels like something.</p></div>
+    </div>
+    <button class="btn" data-next>And now…</button>
+  </section>
+
+  <!-- 5 -->
+  <section class="page">
+    <p class="eyebrow">WARNING</p>
+    <h2>A friendship without nonsense</h2>
+    <h1 class="script">isn't a real friendship</h1>
+    <div class="funny">
+      <p>😂 We laughed at things no one else would ever find funny. And that's exactly why it was funny.</p>
+      <p>🙄 You always say "two minutes" and show up an hour later. I forgive you. Again.</p>
+      <p>📱 The number of messages we send each other to say absolutely nothing should be studied scientifically.</p>
+      <p>❤️ And despite all that — no, because of all that — I wouldn't change a single thing.</p>
+    </div>
+    <button class="btn" data-next>Last step</button>
+  </section>
+
+  <!-- 6 -->
+  <section class="page" id="night">
+    <div class="moon">🌙</div>
+    <p class="eyebrow">JUST BETWEEN US</p>
+    <h2>A thought for tonight</h2>
+    <p class="lead">If you ever doubt your worth, read this again.</p>
+    <p class="lead">You are loved. Far more than you think, and far more than I know how to put into words.</p>
+    <p class="lead">Whatever happens, you will never be alone. I'll be there. For the good days, for the bad ones, and for every birthday still to come.</p>
+    <button class="btn" data-next>I have one last surprise</button>
+  </section>
+
+  <!-- 7 -->
+  <section class="page">
+    <p class="eyebrow">TO FINISH</p>
+    <h2>I saved the most important part</h2>
+    <button class="gift" id="gift" aria-label="Open the gift">🎁</button>
+    <p class="eyebrow" id="hint" style="margin-top:16px">CLICK THE GIFT</p>
+    <div class="final" id="final">
+      <h1 class="script">I love you, Ela</h1>
+      <p class="lead" style="margin:0 auto">Not in a small way. In a way that makes you matter more than almost anything.</p>
+      <p class="lead" style="margin:1em auto 0">Happy birthday, you. Thank you for being my person.</p>
+      <div class="signature">— me ❤️</div>
+      <div class="bouquet" aria-hidden="true">💐</div>
+    </div>
+  </section>
+</main>
+
+<div class="progress" id="progress"></div>
+
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var pages = [].slice.call(document.querySelectorAll('.page'));
+  var progress = document.getElementById('progress');
+  var back = document.getElementById('back');
+  var current = 0;
+
+  pages.forEach(function(_,i){
+    var b=document.createElement('button');
+    b.className='dot'+(i===0?' active':'');
+    b.setAttribute('aria-label','Page '+(i+1));
+    b.addEventListener('click',function(){show(i)});
+    progress.appendChild(b);
+  });
+  var dots=[].slice.call(progress.children);
+
+  function show(i){
+    if(i<0||i>=pages.length) return;
+    pages.forEach(function(p,n){p.classList.toggle('active',n===i)});
+    dots.forEach(function(d,n){d.classList.toggle('active',n===i)});
+    back.hidden = (i===0);
+    current=i;
+    window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+  }
+  document.querySelectorAll('[data-next]').forEach(function(b){
+    b.addEventListener('click',function(){
+      show(current+1);
+      if(b.hasAttribute('data-confetti')) confetti();
+    });
+  });
+
+  // bouton "Commencer" : mini compte à rebours 3-2-1 puis "Happy Birthday Ela"
+  var startBtn=document.getElementById('startBtn');
+  var introCount=document.getElementById('introCount');
+  startBtn.addEventListener('click',function(){
+    var seq=reduce ? [] : ['3','2','1'];
+    var i=0;
+    introCount.classList.add('show');
+
+    function step(){
+      if(i<seq.length){
+        introCount.innerHTML='<div class="num">'+seq[i]+'</div>';
+        i++;
+        setTimeout(step,700);
+      }else{
+        introCount.innerHTML='<div class="wish">Happy Birthday Hala 🎉</div>';
+        confetti();
+        setTimeout(function(){
+          introCount.classList.remove('show');
+          show(current+1);
+        },1400);
+      }
+    }
+    step();
+  });
+  back.addEventListener('click',function(){show(current-1)});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight') show(current+1);
+    if(e.key==='ArrowLeft') show(current-1);
+  });
+
+  // confettis
+  function confetti(){
+    if(reduce) return;
+    var box=document.getElementById('confetti');
+    for(var i=0;i<90;i++){
+      (function(){
+        var p=document.createElement('span');
+        p.className='confetti-piece';
+        p.style.left=Math.random()*100+'vw';
+        p.style.animationDelay=Math.random()*1.1+'s';
+        p.style.background='hsl('+(330+Math.random()*60)+',72%,'+(62+Math.random()*18)+'%)';
+        box.appendChild(p);
+        setTimeout(function(){p.remove()},4800);
+      })();
+    }
+  }
+
+  // cœurs
+  if(!reduce){
+    setInterval(function(){
+      var h=document.createElement('div');
+      h.className='heart';
+      h.textContent=['❤️','💕','💗','💖','🌸','🎉','🎈','🎂','✨','🎁'][Math.floor(Math.random()*10)];
+      h.style.left=Math.random()*100+'vw';
+      h.style.fontSize=(12+Math.random()*18)+'px';
+      h.style.animationDuration=(6+Math.random()*6)+'s';
+      document.getElementById('hearts').appendChild(h);
+      setTimeout(function(){h.remove()},13000);
+    },900);
+  }
+
+  // cadeau
+  var gift=document.getElementById('gift');
+  gift.addEventListener('click',function(){
+    document.getElementById('final').classList.add('show');
+    gift.style.display='none';
+    document.getElementById('hint').style.display='none';
+    confetti();
+  });
+
+  // compte à rebours -> 21 septembre, minuit
+  var lock=document.getElementById('lock');
+  function target(){
+    var now=new Date();
+    var t=new Date(now.getFullYear(),8,21,0,0,0,0);
+    if(now>=t) t=new Date(now.getFullYear()+1,8,21,0,0,0,0);
+    return t;
+  }
+  var T=target();
+  function pad(n){return String(n).padStart(2,'0')}
+  function tick(){
+    var diff=T-new Date();
+    if(diff<=0){
+      ['d','h','m','s'].forEach(function(k){document.getElementById(k).textContent='00'});
+      unlock(true); clearInterval(timer); return;
+    }
+    var ts=Math.floor(diff/1000);
+    document.getElementById('d').textContent=pad(Math.floor(ts/86400));
+    document.getElementById('h').textContent=pad(Math.floor(ts%86400/3600));
+    document.getElementById('m').textContent=pad(Math.floor(ts%3600/60));
+    document.getElementById('s').textContent=pad(ts%60);
+  }
+  function unlock(party){
+    lock.classList.add('opening');
+    setTimeout(function(){lock.style.display='none'},1000);
+    if(party) confetti();
+  }
+  tick();
+  var timer=setInterval(tick,1000);
+
+  // geste secret : 5 clics sur le petit cœur du verrou = aperçu privé
+  var secretHeart=document.getElementById('secretHeart');
+  var taps=0, tapTimer=null;
+  secretHeart.style.cursor='default';
+  secretHeart.addEventListener('click',function(){
+    taps++;
+    clearTimeout(tapTimer);
+    tapTimer=setTimeout(function(){taps=0},4000);
+    if(taps>=21){
+      clearInterval(timer);
+      lock.style.display='none';
+      taps=0;
+    }
+  });
+})();
+</script>
+</body>
+</html>
