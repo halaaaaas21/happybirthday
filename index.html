@@ -143,6 +143,7 @@ hr.rule{border:0;height:1px;width:52px;background:var(--rose);margin:1.6em 0}
 .gift{font-size:76px;background:none;border:0;cursor:pointer;animation:beat 2s ease-in-out infinite;line-height:1}
 .gift:focus-visible{outline:2px solid var(--deep);outline-offset:6px;border-radius:12px}
 .final{display:none;max-width:560px}
+.final p.lead{max-width:44ch}
 .final.show{display:block;animation:pageIn .9s ease both}
 .signature{font-family:"Great Vibes",cursive;font-size:2rem;color:var(--deep);margin-top:22px}
 .bouquet{font-size:64px;margin-top:26px;animation:bouquetIn 1s ease .2s both, sway 3.5s ease-in-out 1.2s infinite}
@@ -392,12 +393,11 @@ hr.rule{border:0;height:1px;width:52px;background:var(--rose);margin:1.6em 0}
     confetti();
   });
 
-  // compte à rebours -> 21 septembre, minuit
+  // compte à rebours -> 21 septembre, puis reste ouvert pour toujours
   var lock=document.getElementById('lock');
   function target(){
     var now=new Date();
     var t=new Date(now.getFullYear(),8,21,0,0,0,0);
-    if(now>=t) t=new Date(now.getFullYear()+1,8,21,0,0,0,0);
     return t;
   }
   var T=target();
@@ -427,7 +427,7 @@ hr.rule{border:0;height:1px;width:52px;background:var(--rose);margin:1.6em 0}
     unlock(true);
   });
 
-  // geste secret : 5 clics sur le petit cœur du verrou = aperçu privé
+  // geste secret : 21 clics sur le petit cœur du verrou = aperçu privé
   var secretHeart=document.getElementById('secretHeart');
   var taps=0, tapTimer=null;
   secretHeart.style.cursor='default';
